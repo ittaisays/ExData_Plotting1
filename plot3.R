@@ -4,7 +4,7 @@ lines <- grep('^[1-2]/2/2007', readLines('household_power_consumption.txt')) #Id
 subsetData<-data[lines,] #Create the data frame with the targeted dates
 subsetData$datetime<-paste(subsetData$Date,subsetData$Time) #Join Date and Time into new column
 subsetData$datetime<-strptime(subsetData$datetime,format="%d/%m/%Y %H:%M:%S") #Convert column to proper format
-png(filename="plot3.png") #Open Device
+png(filename="ExData_Plotting1/plot3.png") #Open Device
 par(mar=c(4,4,4,4)) #Set Margins
 plot(subsetData$datetime,subsetData$Sub_metering_1,type="n",ylab="Energy sub metering",xlab="")
 lines(subsetData$datetime,subsetData$Sub_metering_1)

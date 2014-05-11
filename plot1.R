@@ -4,7 +4,7 @@ lines <- grep('^[1-2]/2/2007', readLines('household_power_consumption.txt')) #Id
 subsetData<-data[lines,] #Create the data frame with the targeted dates
 
 #plot1
-png(filename="plot1.png") #Open Device
+png(filename="ExData_Plotting1/plot1.png") #Open Device
 par(mar=c(4,4,4,4))
 hist(as.numeric(subsetData$Global_active_power),col="red",main="Global Active Power",xlab="Global Active Power (kilowatts)",ylab="Frequency")
 dev.off() # Close Device

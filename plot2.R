@@ -5,7 +5,7 @@ subsetData<-data[lines,] #Create the data frame with the targeted dates
 
 subsetData$datetime<-paste(subsetData$Date,subsetData$Time) #Join Date and Time into new column
 subsetData$datetime<-strptime(subsetData$datetime,format="%d/%m/%Y %H:%M:%S") #Convert column to proper format
-png(filename="plot2.png") #Open Device
+png(filename="ExData_Plotting1/plot2.png") #Open Device
 par(mar=c(4,4,4,4)) #Set Margins
 plot(subsetData$datetime,subsetData$Global_active_power,type="l",ylab="Global Active Power (kilowatts)",xlab="")
 dev.off() #Close Device

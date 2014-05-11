@@ -4,11 +4,11 @@ lines <- grep('^[1-2]/2/2007', readLines('household_power_consumption.txt')) #Id
 subsetData<-data[lines,] #Create the data frame with the targeted dates
 subsetData$datetime<-paste(subsetData$Date,subsetData$Time) #Join Date and Time into new column
 subsetData$datetime<-strptime(subsetData$datetime,format="%d/%m/%Y %H:%M:%S") #Convert column to proper format
-png(filename="plot4.png")#Open Device
+png(filename="ExData_Plotting1/plot4.png")#Open Device
 par(mfrow=c(2,2))
 #Plot1
-par(mar=c(2,2,2,2))
-hist(as.numeric(subsetData$Global_active_power),col="red",main="Global Active Power",xlab="Global Active Power (kilowatts)",ylab="Frequency")
+par(mar=c(5,5,5,5))
+plot(subsetData$datetime,subsetData$Global_active_power,type="l",ylab="Global Active Power",xlab="datetime")
 #Plot2
 plot(subsetData$datetime,subsetData$Voltage,type="l",ylab="Voltage",xlab="datetime")
 #Plot3
